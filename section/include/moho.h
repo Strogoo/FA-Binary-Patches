@@ -651,7 +651,7 @@ struct CUnitCommand
 	// at 0xA4
 	Vector4f Pos1;
     // at 0x120
-    Unit Target; // -0xC
+    //Unit Target; // -0xC
 	// at 0x128
 	Vector3f Pos2;
 	// at 0x160
