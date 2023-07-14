@@ -63,7 +63,16 @@ void SimGetCommandQueue()
         "mov edx, [eax+0x9C];"
         "cmp edx, 0xF0000000;"
         "je bpId;"
-        "and edx, 0x1FFFFF;"
+        "push ebx;"
+        "mov ebx, [eax+0x11C];"
+        "push eax;"
+        "mov eax, 0x00E2F3BC;"
+        "cmp [ebx-0x4], eax;"   //is targget a prop. No need mask then
+        "pop eax;"
+        "pop ebx;"
+        "je NoMask;"
+        "and edx, 0x1FFFFF;"    //apply mask to get proper ID for unit
+        "NoMask:;"
         "push edx;"
         "push %[targetId];"
         "mov eax, [eax+0x2C];"
