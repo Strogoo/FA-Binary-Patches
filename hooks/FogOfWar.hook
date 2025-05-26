@@ -1,4 +1,13 @@
 0x007F60A0:
     jmp @LoadFxFieldValue
-
-
+    
+0x00495339:
+    jmp @SaveMatrices
+    nop
+    
+0x007F60B9:
+    jmp @SetWpos
+    nop
+    
+0x00BE1319:
+    jmp @RegisterNewFrameVar
